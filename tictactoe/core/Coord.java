@@ -25,7 +25,7 @@ public record Coord(int i, int j) {
         }
 
         try {
-            return new Coord(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
+            return new Coord(Integer.parseInt(tokens[0]) - 1, Integer.parseInt(tokens[1]) - 1);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("Invalid number");
         }

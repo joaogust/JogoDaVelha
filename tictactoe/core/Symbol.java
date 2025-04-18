@@ -1,7 +1,7 @@
 package core;
 
 public enum Symbol {
-    O('X'),
+    O('O'),
     X('X'),
     NONE(' ');
 

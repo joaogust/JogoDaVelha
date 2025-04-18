@@ -6,7 +6,7 @@ import java.util.List;
 public class Players {
 
     private final List<Symbol> players = new ArrayList<>(2);
-    private int currentPlayerIndex = -1;
+    private int currentPlayerIndex = 1;
 
     public Players() {
         players.add(Symbol.X);
@@ -16,5 +16,10 @@ public class Players {
     public Symbol next() {
         currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
         return players.get(currentPlayerIndex);
+    }
+
+    public Symbol getActualPlayer() {
+        int temp = (currentPlayerIndex + 1) % players.size();
+        return players.get(temp);
     }
 }
