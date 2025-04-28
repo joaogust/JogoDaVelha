@@ -11,7 +11,7 @@ public class Game {
 
     public void start() {
         write("-------------\nJOGO DA VELHA\n-------------");
-        while (true) {
+        while (Players.getRound() < 9) {
             writeNewLine();
             write(board);
             writeNewLine();
@@ -19,7 +19,7 @@ public class Game {
             Coord coord;
             write("Player '" + players.getActualPlayer() + "', it's your round!");
             while (true) {
-                String play = read("Play =>");
+                String play = read("Play (l,c) =>");
                 try {
                     coord = Coord.parse(play);
                     if (board.verifyUpdate(players.getActualPlayer(), coord)) {
@@ -40,8 +40,13 @@ public class Game {
                 write(board + "\n");
                 winner = board.verifyWinner();
                 write("The winner was: '" + winner + "'");
-                write("End Game.");
                 break;
+            } else {
+                write("\n---------------------");
+                write("      End Game");
+                write("---------------------\n");
+                write(board + "\n");
+                write("The game ended in a draw.");
             }
 
         }

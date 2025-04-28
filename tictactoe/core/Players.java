@@ -5,12 +5,22 @@ import java.util.List;
 
 public class Players {
 
+    private static int round;
+
     private final List<Symbol> players = new ArrayList<>(2);
     private int currentPlayerIndex = 1;
 
     public Players() {
         players.add(Symbol.X);
         players.add(Symbol.O);
+    }
+
+    public static int getRound() {
+        return round;
+    }
+
+    public static void addRound() {
+        round++;
     }
 
     public Symbol next() {

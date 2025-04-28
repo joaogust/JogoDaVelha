@@ -42,6 +42,7 @@ public class Board {
 
     public void update(Symbol symbol, Coord coord) {
         matrix[coord.i()][coord.j()] = symbol;
+        Players.addRound();
     }
 
     public boolean verifyUpdate(Symbol symbol, Coord coord) {
